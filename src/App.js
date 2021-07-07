@@ -1,5 +1,12 @@
+import './App.scss';
+import MainChart from './components/MainChart/MainChart';
+
 const App = () => {
-  return <div className='App'></div>;
+  return (
+    <>
+      <MainChart />
+    </>
+  );
 };
 
 export default App;
