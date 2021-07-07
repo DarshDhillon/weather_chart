@@ -10,16 +10,18 @@ export const setLoading = (boolean) => ({
 });
 
 export const getWeatherData = () => async (dispatch) => {
-  dispatch({ type: SET_LOADING, payload: true });
+  dispatch(setLoading(true));
 
   try {
     const { data } = await axios.get(OPEN_WEATHER_ENDPOINT);
-    console.log(data);
+    // console.log(data);
     dispatch({
       type: GET_WEATHER_DATA,
       payload: data,
     });
+    dispatch(setLoading(false));
   } catch (error) {
     console.error(error);
+    dispatch(setLoading(false));
   }
 };

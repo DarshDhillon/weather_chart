@@ -5,7 +5,7 @@ const initialState = {
   error: '',
   weatherData: {
     timeZone: '',
-    hourlyData: [],
+    hourlyTemperatures: [],
   },
 };
 
@@ -16,10 +16,20 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
         ...state,
         isLoading: payload,
       };
+
     case GET_WEATHER_DATA:
+      const hourlyTemperatures = [];
+
+      payload.hourly.forEach((element) => {
+        hourlyTemperatures.push(element.temp);
+      });
+
       return {
         ...state,
-        weatherData: { timeZone: payload.timezone },
+        weatherData: {
+          hourlyTemperatures: hourlyTemperatures,
+          timeZone: payload.timezone,
+        },
       };
     default:
       return state;
