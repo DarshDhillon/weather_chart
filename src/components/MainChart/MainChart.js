@@ -1,43 +1,32 @@
 import './MainChart.scss';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeatherData } from '../../state/actions';
 import { Bar } from 'react-chartjs-2';
+import LoadingSpinner from '../../assets/weather_spinner.gif';
+import { hourlyTimes } from '../../data/hourlyTimes';
+import CitySelector from '../CitySelector/CitySelector';
 
 const MainChart = () => {
-  const [latestHourlyTemperatures, setLatestHourlyTemperatures] = useState([]);
+  const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.mainChart.isLoading);
+  const timeZone = useSelector((state) => state.mainChart.weatherData.timeZone);
+  const hourlyTemperatures = useSelector(
+    (state) => state.mainChart.weatherData.hourlyTemperatures
+  );
+
+  const coordinates = useSelector(
+    (state) => state.mainChart.weatherData.coordinates
+  );
+
+  // console.log(coordinates);
 
   const data = {
-    labels: [
-      'Grey',
-      'Blue',
-      'Yellow',
-      'Green',
-      'Purple',
-      'Woot',
-      'Grey',
-      'Blue',
-      'Yellow',
-      'Green',
-      'Purple',
-      'Woot',
-      'Grey',
-      'Blue',
-      'Yellow',
-      'Green',
-      'Purple',
-      'Woot',
-      'Grey',
-      'Blue',
-      'Yellow',
-      'Green',
-      'Purple',
-      'Woot',
-    ],
+    labels: hourlyTimes,
     datasets: [
       {
         label: 'Temperature',
-        data: latestHourlyTemperatures,
+        data: hourlyTemperatures,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'grey',
@@ -73,23 +62,29 @@ const MainChart = () => {
     },
   };
 
-  const dispatch = useDispatch();
-  const timeZone = useSelector((state) => state.mainChart.weatherData.timeZone);
-  const hourlyTemperatures = useSelector(
-    (state) => state.mainChart.weatherData.hourlyTemperatures
-  );
-
   useEffect(() => {
-    dispatch(getWeatherData());
-    setLatestHourlyTemperatures(hourlyTemperatures);
+    dispatch(getWeatherData(coordinates));
   }, []);
 
   return (
     <div className='container'>
-      <h1>Your time zone is: {timeZone}</h1>
-      <div className='main__chart__wrapper'>
-        <Bar data={data} options={options} />
-      </div>
+      {isLoading ? (
+        <div className='loading__spinner__wrapper'>
+          <img
+            className='loading__spinner'
+            src={LoadingSpinner}
+            alt='loading_spinner'
+          />
+        </div>
+      ) : (
+        <div className='main__chart__container'>
+          <h1 className='main__chart__title'>Time zone: {timeZone}</h1>
+          <CitySelector />
+          <div className='main__chart__wrapper'>
+            <Bar data={data} options={options} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

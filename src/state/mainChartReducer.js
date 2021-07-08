@@ -1,4 +1,4 @@
-import { SET_LOADING, GET_WEATHER_DATA } from './actionTypes';
+import { SET_LOADING, GET_WEATHER_DATA, SET_COORDINATES } from './actionTypes';
 
 const initialState = {
   isLoading: false,
@@ -6,6 +6,10 @@ const initialState = {
   weatherData: {
     timeZone: '',
     hourlyTemperatures: [],
+    coordinates: {
+      lat: 51.5074,
+      lon: 0.1272,
+    },
   },
 };
 
@@ -27,10 +31,20 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         weatherData: {
-          hourlyTemperatures: hourlyTemperatures,
+          hourlyTemperatures,
           timeZone: payload.timezone,
         },
       };
+
+    case SET_COORDINATES:
+      return {
+        ...state,
+        weatherData: {
+          ...state.weatherData,
+          coordinates: { lat: payload.lat, lon: payload.lon },
+        },
+      };
+
     default:
       return state;
   }
