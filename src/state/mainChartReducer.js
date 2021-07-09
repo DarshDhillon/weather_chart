@@ -1,8 +1,8 @@
-import { SET_LOADING, GET_WEATHER_DATA, SET_COORDINATES } from './actionTypes';
+import { SET_LOADING, GET_WEATHER_DATA } from './actionTypes';
 
 const initialState = {
   isLoading: false,
-  error: '',
+  error: false,
   weatherData: {
     timeZone: '',
     hourlyTemperatures: [],
@@ -24,8 +24,8 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
     case GET_WEATHER_DATA:
       const hourlyTemperatures = [];
 
-      payload.hourly.forEach((element) => {
-        hourlyTemperatures.push(element.temp);
+      payload.hourly.forEach((hour) => {
+        hourlyTemperatures.push(hour.temp);
       });
 
       return {
@@ -33,15 +33,6 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
         weatherData: {
           hourlyTemperatures,
           timeZone: payload.timezone,
-        },
-      };
-
-    case SET_COORDINATES:
-      return {
-        ...state,
-        weatherData: {
-          ...state.weatherData,
-          coordinates: { lat: payload.lat, lon: payload.lon },
         },
       };
 

@@ -6,5 +6,6 @@
 
 .city__selector__container img {
   width: 150px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=CitySelector.css.map */

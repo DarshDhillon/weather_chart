@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,0BAA0B,CAAC;EACzB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAqB;CACjC;;AAIC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAFrC,AAAA,iBAAiB,CAAC;IAGd,KAAK,EAAE,KAAK;GAEf",
+    "sources": [
+        "LoadingSpinner.scss"
+    ],
+    "names": [],
+    "file": "LoadingSpinner.css"
+}

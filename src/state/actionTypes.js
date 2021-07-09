@@ -1,5 +1,3 @@
 export const SET_LOADING = 'SET_LOADING';
 
 export const GET_WEATHER_DATA = 'GET_WEATHER_DATA';
-
-export const SET_COORDINATES = 'SET_COORDINATES';

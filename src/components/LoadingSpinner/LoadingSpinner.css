@@ -1,0 +1,14 @@
+.loading__spinner__wrapper {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -30%);
+          transform: translate(-50%, -30%);
+}
+
+@media screen and (max-width: 550px) {
+  .loading__spinner {
+    width: 250px;
+  }
+}
+/*# sourceMappingURL=LoadingSpinner.css.map */

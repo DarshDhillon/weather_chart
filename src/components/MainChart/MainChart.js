@@ -2,24 +2,21 @@ import './MainChart.scss';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeatherData } from '../../state/actions';
-import { Bar } from 'react-chartjs-2';
-import LoadingSpinner from '../../assets/weather_spinner.gif';
+import { Bar, defaults } from 'react-chartjs-2';
 import { hourlyTimes } from '../../data/hourlyTimes';
 import CitySelector from '../CitySelector/CitySelector';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import UserLocationSelector from '../UserLocationSelector/UserLocationSelector';
 
 const MainChart = () => {
+  defaults.color = '#000';
+  const defaultLondonLatLon = { lat: 51.5074, lon: 0.1272 };
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.mainChart.isLoading);
   const timeZone = useSelector((state) => state.mainChart.weatherData.timeZone);
   const hourlyTemperatures = useSelector(
     (state) => state.mainChart.weatherData.hourlyTemperatures
   );
-
-  const coordinates = useSelector(
-    (state) => state.mainChart.weatherData.coordinates
-  );
-
-  // console.log(coordinates);
 
   const data = {
     labels: hourlyTimes,
@@ -63,24 +60,19 @@ const MainChart = () => {
   };
 
   useEffect(() => {
-    dispatch(getWeatherData(coordinates));
+    dispatch(getWeatherData(defaultLondonLatLon));
   }, []);
 
   return (
     <div className='container'>
       {isLoading ? (
-        <div className='loading__spinner__wrapper'>
-          <img
-            className='loading__spinner'
-            src={LoadingSpinner}
-            alt='loading_spinner'
-          />
-        </div>
+        <LoadingSpinner />
       ) : (
         <div className='main__chart__container'>
-          <h1 className='main__chart__title'>Time zone: {timeZone}</h1>
           <CitySelector />
+          {/* <UserLocationSelector /> */}
           <div className='main__chart__wrapper'>
+            <h1 className='main__chart__title'>Time zone: {timeZone}</h1>
             <Bar data={data} options={options} />
           </div>
         </div>

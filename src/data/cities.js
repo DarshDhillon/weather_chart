@@ -1,25 +1,65 @@
 import { v4 as uuid } from 'uuid';
-import LondonIcon from '../assets/london_icon.png';
-import ManchesterIcon from '../assets/manchester_icon.jpg';
+import LondonLogo from '../assets/london_logo.jpg';
+import BangkokLogo from '../assets/bangkok_logo.jpg';
+import DubaiLogo from '../assets/dubai_logo.jpg';
+import NYCLogo from '../assets/nyc_logo.jpg';
+import ReykjavikLogo from '../assets/reykjavik_logo.jpg';
+import SydneyLogo from '../assets/sydney_logo.jpg';
 
 export const cities = [
   {
     id: uuid(),
-    cityName: 'London',
+    cityName: 'London, UK',
     location: {
       lat: 51.5074,
       lon: 0.1272,
     },
-    img: LondonIcon,
+    img: LondonLogo,
+  },
+  {
+    id: uuid(),
+    cityName: 'New York City, USA',
+    location: {
+      lat: 40.7128,
+      lon: -73.935242,
+    },
+    img: NYCLogo,
   },
 
   {
     id: uuid(),
-    cityName: 'Manchester',
+    cityName: 'Bangkok, Thailand',
     location: {
-      lat: 53.4808,
-      lon: 2.2426,
+      lat: 13.7563,
+      lon: 100.5018,
     },
-    img: ManchesterIcon,
+    img: BangkokLogo,
+  },
+  {
+    id: uuid(),
+    cityName: 'Dubai, UAE',
+    location: {
+      lat: 25.2048,
+      lon: 55.2708,
+    },
+    img: DubaiLogo,
+  },
+  {
+    id: uuid(),
+    cityName: 'Sydney, Australia',
+    location: {
+      lat: -33.856159,
+      lon: 151.215256,
+    },
+    img: SydneyLogo,
+  },
+  {
+    id: uuid(),
+    cityName: 'Reykjavik, Iceland',
+    location: {
+      lat: 64.128288,
+      lon: -21.827774,
+    },
+    img: ReykjavikLogo,
   },
 ];
