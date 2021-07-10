@@ -1,10 +1,14 @@
 import './CitySelector.scss';
 import { cities } from '../../data/cities';
 import { getWeatherData } from '../../state/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CitySelector = () => {
   const dispatch = useDispatch();
+
+  const cityLat = useSelector(
+    (state) => state.mainChart.weatherData.coordinates.lat
+  );
 
   return (
     <div className='city__selector__container'>
@@ -14,7 +18,11 @@ const CitySelector = () => {
           key={city.id}
           onClick={() => dispatch(getWeatherData(city.location))}
         >
-          <img src={city.img} alt={city.cityName} />
+          <img
+            className={cityLat === city.location.lat ? 'active' : ''}
+            src={city.img}
+            alt={city.cityName}
+          />
           <p>{city.cityName}</p>
         </div>
       ))}

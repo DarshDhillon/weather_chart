@@ -1,0 +1,33 @@
+.chart__icons__container {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.chart__icons__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chart__icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #b4adad;
+}
+
+.horizontal {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.active {
+  color: blue;
+}
+/*# sourceMappingURL=ChartIconsSelector.css.map */

@@ -7,8 +7,8 @@ const initialState = {
     timeZone: '',
     hourlyTemperatures: [],
     coordinates: {
-      lat: 51.5074,
-      lon: 0.1272,
+      lat: '',
+      lon: '',
     },
   },
 };
@@ -31,8 +31,10 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         weatherData: {
+          ...state.weatherData,
           hourlyTemperatures,
           timeZone: payload.timezone,
+          coordinates: { lat: payload.lat, lon: payload.lon },
         },
       };
 

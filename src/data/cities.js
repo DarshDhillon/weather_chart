@@ -21,7 +21,7 @@ export const cities = [
     cityName: 'New York City, USA',
     location: {
       lat: 40.7128,
-      lon: -73.935242,
+      lon: -73.9352,
     },
     img: NYCLogo,
   },
@@ -48,8 +48,8 @@ export const cities = [
     id: uuid(),
     cityName: 'Sydney, Australia',
     location: {
-      lat: -33.856159,
-      lon: 151.215256,
+      lat: -33.8562,
+      lon: 151.2153,
     },
     img: SydneyLogo,
   },
@@ -57,8 +57,8 @@ export const cities = [
     id: uuid(),
     cityName: 'Reykjavik, Iceland',
     location: {
-      lat: 64.128288,
-      lon: -21.827774,
+      lat: 64.1283,
+      lon: -21.8278,
     },
     img: ReykjavikLogo,
   },
