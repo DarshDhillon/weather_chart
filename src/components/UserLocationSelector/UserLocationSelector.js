@@ -1,5 +1,7 @@
+import './UserLocationSelector.scss';
 import { useDispatch } from 'react-redux';
-import { getWeatherData } from '../../state/actions';
+import { getUserWeatherData } from '../../state/actions';
+import { GrMapLocation } from 'react-icons/gr';
 
 const UserLocationSelector = () => {
   const dispatch = useDispatch();
@@ -7,22 +9,26 @@ const UserLocationSelector = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) =>
         dispatch(
-          getWeatherData({
+          getUserWeatherData({
             lat: position.coords.latitude,
             lon: position.coords.longitude,
           })
         )
       );
     } else {
-      alert('Permission is required for this action');
+      alert('Permission required for this action');
     }
   };
 
   return (
-    <div>
-      <button style={{ padding: '2rem' }} onClick={handleUserLocation}>
-        My location's temperatures
-      </button>
+    <div
+      data-tooltip='Show temperatures for my location'
+      onClick={handleUserLocation}
+      className='user__location__container'
+    >
+      <div className='map__location__icon__wrapper'>
+        <GrMapLocation className='map__icon' />
+      </div>
     </div>
   );
 };

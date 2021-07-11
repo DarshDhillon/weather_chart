@@ -1,4 +1,8 @@
-import { SET_LOADING, GET_WEATHER_DATA } from './actionTypes';
+import {
+  SET_LOADING,
+  GET_WEATHER_DATA,
+  GET_USER_WEATHER_DATA,
+} from './actionTypes';
 
 const initialState = {
   isLoading: false,
@@ -35,6 +39,26 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
           hourlyTemperatures,
           timeZone: payload.timezone,
           coordinates: { lat: payload.lat, lon: payload.lon },
+        },
+      };
+
+    case GET_USER_WEATHER_DATA:
+      const temperaturesHourly = [];
+
+      payload.weatherData.hourly.forEach((hour) => {
+        temperaturesHourly.push(hour.temp);
+      });
+
+      return {
+        ...state,
+        weatherData: {
+          ...state.weatherData,
+          hourlyTemperatures: temperaturesHourly,
+          timeZone: payload.locationData.results[0].formatted_address,
+          coordinates: {
+            lat: payload.weatherData.lat,
+            lon: payload.weatherData.lon,
+          },
         },
       };
 

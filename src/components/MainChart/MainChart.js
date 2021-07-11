@@ -32,13 +32,15 @@ const MainChart = () => {
       ) : (
         <div className='main__chart__container'>
           <CitySelector />
-          {/* <UserLocationSelector /> */}
           <div className='main__chart__wrapper'>
-            <h1 className='main__chart__title'>Time zone: {timeZone}</h1>
-            <ChartIconsSelector
-              setChartType={setChartType}
-              chartType={chartType}
-            />
+            <h1 className='main__chart__title'>{timeZone}</h1>
+            <div className='main__icons__wrapper'>
+              <UserLocationSelector />
+              <ChartIconsSelector
+                setChartType={setChartType}
+                chartType={chartType}
+              />
+            </div>
             {chartType === 'line' ? (
               <LineChart
                 hourlyTimes={hourlyTimes}
