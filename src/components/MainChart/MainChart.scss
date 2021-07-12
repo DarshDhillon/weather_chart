@@ -5,13 +5,14 @@
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
-  background-color: lightyellow;
+  // background-color: lightyellow;
 }
 
 .main__chart__container {
   // border: 1px solid blue;
   display: flex;
   flex-direction: column;
+  // height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -26,13 +27,18 @@
   align-items: center;
 }
 
+.main__chart__title__wrapper {
+  text-align: center;
+  width: 80%;
+}
+
 .main__chart__title {
   color: blue;
   margin-bottom: 2rem;
-}
 
-.chart__styling {
-  color: red;
+  @media screen and (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
 }
 
 .main__icons__wrapper {

@@ -1,7 +1,7 @@
 import './UserLocationSelector.scss';
 import { useDispatch } from 'react-redux';
 import { getUserWeatherData } from '../../state/actions';
-import { GrMapLocation } from 'react-icons/gr';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 const UserLocationSelector = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const UserLocationSelector = () => {
       className='user__location__container'
     >
       <div className='map__location__icon__wrapper'>
-        <GrMapLocation className='map__icon' />
+        <HiOutlineLocationMarker />
       </div>
     </div>
   );

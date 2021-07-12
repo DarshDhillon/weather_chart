@@ -7,7 +7,7 @@ const LineChart = ({ hourlyTimes, hourlyTemperatures }) => {
     labels: hourlyTimes,
     datasets: [
       {
-        label: '# of Votes',
+        label: 'Temperature ℃ ',
         data: hourlyTemperatures,
         fill: false,
         backgroundColor: 'rgb(255, 99, 132)',

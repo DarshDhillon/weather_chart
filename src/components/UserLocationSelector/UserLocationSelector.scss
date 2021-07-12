@@ -1,10 +1,7 @@
 .map__location__icon__wrapper {
   font-size: 2rem;
   cursor: pointer;
-}
-
-.map__icon {
-  color: #fff;
+  color: grey;
 }
 
 [data-tooltip]:before {
@@ -14,14 +11,14 @@
 
   transition: all 0.15s ease;
   padding: 10px;
-  color: #333;
+  color: #000;
   border-radius: 10px;
   box-shadow: 2px 2px 1px silver;
 }
 
 [data-tooltip]:hover:before {
   opacity: 1;
-  background: yellow;
+  background: lightgrey;
   margin-top: -50px;
   margin-left: 20px;
 }

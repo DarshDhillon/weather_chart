@@ -26,37 +26,41 @@ const MainChart = () => {
   }, []);
 
   return (
-    <div className='container'>
+    <>
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <div className='main__chart__container'>
-          <CitySelector />
-          <div className='main__chart__wrapper'>
-            <h1 className='main__chart__title'>{timeZone}</h1>
-            <div className='main__icons__wrapper'>
-              <UserLocationSelector />
-              <ChartIconsSelector
-                setChartType={setChartType}
-                chartType={chartType}
-              />
+        <div className='container'>
+          <div className='main__chart__container'>
+            <CitySelector />
+            <div className='main__chart__wrapper'>
+              <div className='main__chart__title__wrapper'>
+                <h1 className='main__chart__title'>{timeZone}</h1>
+              </div>
+              <div className='main__icons__wrapper'>
+                <UserLocationSelector />
+                <ChartIconsSelector
+                  setChartType={setChartType}
+                  chartType={chartType}
+                />
+              </div>
+              {chartType === 'line' ? (
+                <LineChart
+                  hourlyTimes={hourlyTimes}
+                  hourlyTemperatures={hourlyTemperatures}
+                />
+              ) : (
+                <BarChart
+                  chartType={chartType}
+                  hourlyTimes={hourlyTimes}
+                  hourlyTemperatures={hourlyTemperatures}
+                />
+              )}
             </div>
-            {chartType === 'line' ? (
-              <LineChart
-                hourlyTimes={hourlyTimes}
-                hourlyTemperatures={hourlyTemperatures}
-              />
-            ) : (
-              <BarChart
-                chartType={chartType}
-                hourlyTimes={hourlyTimes}
-                hourlyTemperatures={hourlyTemperatures}
-              />
-            )}
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

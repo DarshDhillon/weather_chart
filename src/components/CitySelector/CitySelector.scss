@@ -1,9 +1,13 @@
 .city__selector__container {
   // border: 1px solid red;
+  max-width: 80%;
   display: flex;
-  width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1000px) {
+    width: 70%;
+  }
 }
 
 .city__selector__image__wrapper {
@@ -11,6 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   img {
     width: 180px;
@@ -26,6 +31,10 @@
       transform: scale(1.1);
     }
 
+    @media screen and (max-width: 1200px) {
+      width: 100px;
+    }
+
     @media screen and (max-width: 500px) {
       width: 75px;
     }
@@ -37,6 +46,7 @@
   }
 
   p {
+    text-align: center;
     margin-top: 1rem;
     font-weight: bold;
   }

@@ -5,6 +5,8 @@ import {
   GET_USER_WEATHER_DATA,
 } from './actionTypes';
 
+const unixTimeInSeconds = Math.floor(new Date().getTime() / 1000 - 90000);
+
 const OPEN_WEATHER_API_KEY = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
 
 const GOOGLE_MAPS_GEOCODING_API_KEY =
@@ -19,7 +21,7 @@ export const getWeatherData =
   ({ lat, lon }) =>
   async (dispatch) => {
     dispatch(setLoading(true));
-    const OPEN_WEATHER_ENDPOINT = `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=1625554899&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
+    const OPEN_WEATHER_ENDPOINT = `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${unixTimeInSeconds}&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
 
     try {
       const { data } = await axios.get(OPEN_WEATHER_ENDPOINT);
@@ -40,7 +42,7 @@ export const getUserWeatherData =
   async (dispatch) => {
     dispatch(setLoading(true));
 
-    const OPEN_WEATHER_ENDPOINT = `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=1625554899&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
+    const OPEN_WEATHER_ENDPOINT = `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${unixTimeInSeconds}&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
     const GOOGLE_MAPS_GEOCODING_ENDPOINT = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${GOOGLE_MAPS_GEOCODING_API_KEY}`;
 
     const requestOne = axios.get(OPEN_WEATHER_ENDPOINT);
@@ -62,9 +64,6 @@ export const getUserWeatherData =
           });
 
           dispatch(setLoading(false));
-
-          console.log(responseOne.data);
-          console.log(responseTwo.data);
         })
       )
       .catch((errors) => console.error(errors));

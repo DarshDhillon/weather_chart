@@ -7,7 +7,7 @@ const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
     labels: hourlyTimes,
     datasets: [
       {
-        label: 'Temperature',
+        label: 'Temperature ℃ ',
         data: hourlyTemperatures,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -56,8 +56,8 @@ const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
           position: 'right',
         },
         title: {
-          display: true,
-          text: 'Chart.js Horizontal Bar Chart',
+          display: false,
+          text: 'Horizontal Bar Chart',
         },
       },
     };
