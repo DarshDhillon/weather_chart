@@ -2,6 +2,10 @@
   font-size: 2rem;
   cursor: pointer;
   color: grey;
+
+  &.active {
+    color: blue;
+  }
 }
 
 [data-tooltip]:before {

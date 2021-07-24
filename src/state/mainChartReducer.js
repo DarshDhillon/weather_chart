@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   error: false,
   weatherData: {
+    isUserLocation: false,
     timeZone: '',
     hourlyTemperatures: [],
     coordinates: {
@@ -36,6 +37,7 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
         ...state,
         weatherData: {
           ...state.weatherData,
+          isUserLocation: false,
           hourlyTemperatures,
           timeZone: payload.timezone,
           coordinates: { lat: payload.lat, lon: payload.lon },
@@ -53,6 +55,7 @@ const mainChartReducer = (state = initialState, { type, payload }) => {
         ...state,
         weatherData: {
           ...state.weatherData,
+          isUserLocation: true,
           hourlyTemperatures: temperaturesHourly,
           timeZone: payload.locationData.results[0].formatted_address,
           coordinates: {

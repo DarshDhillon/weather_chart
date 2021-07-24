@@ -1,5 +1,6 @@
 import './ChartIconsSelector.scss';
 import { BiBarChart, BiLineChart } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 
 const ChartIconsSelector = ({ setChartType, chartType }) => {
   return (
@@ -26,6 +27,11 @@ const ChartIconsSelector = ({ setChartType, chartType }) => {
       </div>
     </div>
   );
+};
+
+ChartIconsSelector.propTypes = {
+  setChartType: PropTypes.func,
+  chartType: PropTypes.string,
 };
 
 export default ChartIconsSelector;

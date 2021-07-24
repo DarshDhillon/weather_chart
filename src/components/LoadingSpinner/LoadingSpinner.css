@@ -1,9 +1,15 @@
 .loading__spinner__wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loading__spinner {
   position: absolute;
-  top: 30%;
-  left: 50%;
   -webkit-transform: translate(-50%, -30%);
           transform: translate(-50%, -30%);
+  left: 50%;
+  top: 30%;
 }
 
 @media screen and (max-width: 550px) {

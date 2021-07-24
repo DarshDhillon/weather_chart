@@ -9,6 +9,7 @@ import UserLocationSelector from '../UserLocationSelector/UserLocationSelector';
 import BarChart from '../ChartTypes/BarChart';
 import LineChart from '../ChartTypes/LineChart';
 import ChartIconsSelector from '../ChartIconsSelector/ChartIconsSelector';
+import UnixTimeToDateConverter from '../UnixTimeToDateConverter/UnixTimeToDateConverter';
 
 const MainChart = () => {
   const [chartType, setChartType] = useState('vertical');
@@ -36,6 +37,7 @@ const MainChart = () => {
             <div className='main__chart__wrapper'>
               <div className='main__chart__title__wrapper'>
                 <h1 className='main__chart__title'>{timeZone}</h1>
+                <UnixTimeToDateConverter />
               </div>
               <div className='main__icons__wrapper'>
                 <UserLocationSelector />

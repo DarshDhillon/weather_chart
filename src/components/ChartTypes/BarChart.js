@@ -1,4 +1,5 @@
 import { Bar, defaults } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
   defaults.color = '#000';
@@ -30,48 +31,51 @@ const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
     ],
   };
 
-  const setOptionsByChartType = (chartType) => {
-    const optionsVertical = {
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
+  const optionsVertical = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
           },
-        ],
-      },
-    };
-
-    const optionsHorizontal = {
-      indexAxis: 'y',
-      elements: {
-        bar: {
-          borderWidth: 2,
         },
-      },
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'right',
-        },
-        title: {
-          display: false,
-          text: 'Horizontal Bar Chart',
-        },
-      },
-    };
+      ],
+    },
+  };
 
-    if (chartType === 'vertical') return optionsVertical;
-
-    if (chartType === 'horizontal') return optionsHorizontal;
+  const optionsHorizontal = {
+    indexAxis: 'y',
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: false,
+        text: 'Horizontal Bar Chart',
+      },
+    },
   };
 
   return (
     <>
-      <Bar data={data} options={setOptionsByChartType(chartType)} />
+      <Bar
+        data={data}
+        options={chartType === 'vertical' ? optionsVertical : optionsHorizontal}
+      />
     </>
   );
+};
+
+BarChart.propTypes = {
+  hourlyTimes: PropTypes.arrayOf(PropTypes.string),
+  hourlyTemperatures: PropTypes.arrayOf(PropTypes.number),
+  chartType: PropTypes.string,
 };
 
 export default BarChart;

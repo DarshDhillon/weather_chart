@@ -13,12 +13,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 2rem;
-  background-color: lightyellow;
-  position: relative;
-}
-
-.container.dark__mode {
-  background-color: red;
 }
 
 .main__chart__container {
@@ -53,13 +47,20 @@
           align-items: center;
 }
 
+.main__chart__title__wrapper {
+  text-align: center;
+  width: 80%;
+}
+
 .main__chart__title {
   color: blue;
   margin-bottom: 2rem;
 }
 
-.chart__styling {
-  color: red;
+@media screen and (max-width: 1200px) {
+  .main__chart__title {
+    font-size: 1.5rem;
+  }
 }
 
 .main__icons__wrapper {

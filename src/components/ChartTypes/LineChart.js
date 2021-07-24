@@ -1,4 +1,5 @@
 import { Line, defaults } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 const LineChart = ({ hourlyTimes, hourlyTemperatures }) => {
   defaults.color = '#000';
@@ -33,6 +34,11 @@ const LineChart = ({ hourlyTimes, hourlyTemperatures }) => {
       <Line data={data} options={options} />
     </>
   );
+};
+
+LineChart.propTypes = {
+  hourlyTimes: PropTypes.arrayOf(PropTypes.string),
+  hourlyTemperatures: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default LineChart;

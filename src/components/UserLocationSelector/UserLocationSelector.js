@@ -1,20 +1,25 @@
 import './UserLocationSelector.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserWeatherData } from '../../state/actions';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 const UserLocationSelector = () => {
   const dispatch = useDispatch();
+
+  const isUserLocation = useSelector(
+    (state) => state.mainChart.weatherData.isUserLocation
+  );
+
   const handleUserLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) =>
+      navigator.geolocation.getCurrentPosition((position) => {
         dispatch(
           getUserWeatherData({
             lat: position.coords.latitude,
             lon: position.coords.longitude,
           })
-        )
-      );
+        );
+      });
     } else {
       alert('Permission required for this action');
     }
@@ -26,7 +31,11 @@ const UserLocationSelector = () => {
       onClick={handleUserLocation}
       className='user__location__container'
     >
-      <div className='map__location__icon__wrapper'>
+      <div
+        className={`map__location__icon__wrapper ${
+          isUserLocation && 'active'
+        } `}
+      >
         <HiOutlineLocationMarker />
       </div>
     </div>
