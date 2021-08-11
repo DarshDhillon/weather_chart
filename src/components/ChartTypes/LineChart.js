@@ -2,9 +2,9 @@ import { Line, defaults } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
 const LineChart = ({ hourlyTimes, hourlyTemperatures }) => {
-  defaults.color = '#000';
+  defaults.color = '#fff';
 
-  const data = {
+  const dataLine = {
     labels: hourlyTimes,
     datasets: [
       {
@@ -31,7 +31,7 @@ const LineChart = ({ hourlyTimes, hourlyTemperatures }) => {
 
   return (
     <>
-      <Line data={data} options={options} />
+      <Line data={dataLine} options={options} />
     </>
   );
 };

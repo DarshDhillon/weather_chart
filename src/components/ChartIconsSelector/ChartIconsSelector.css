@@ -5,18 +5,48 @@
 }
 
 .chart__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
   font-size: 2rem;
   margin-left: 1rem;
   cursor: pointer;
   color: #b4adad;
+  background: #fff;
+}
+
+.chart__icon.active {
+  color: #fff;
+  background: #05224e;
+}
+
+@media screen and (max-width: 1200px) {
+  .chart__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .chart__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 .horizontal {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-}
-
-.active {
-  color: blue;
 }
 /*# sourceMappingURL=ChartIconsSelector.css.map */

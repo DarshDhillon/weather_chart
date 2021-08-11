@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeatherData } from '../../state/actions';
 import { hourlyTimes } from '../../data/hourlyTimes';
+import TitleBanner from '../TitleBanner/TitleBanner';
 import CitySelector from '../CitySelector/CitySelector';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import UserLocationSelector from '../UserLocationSelector/UserLocationSelector';
@@ -32,6 +33,7 @@ const MainChart = () => {
         <LoadingSpinner />
       ) : (
         <div className='container'>
+          <TitleBanner />
           <div className='main__chart__container'>
             <CitySelector />
             <div className='main__chart__wrapper'>

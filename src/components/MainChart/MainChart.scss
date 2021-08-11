@@ -5,7 +5,7 @@
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
-  // background-color: lightyellow;
+  background-image: linear-gradient(to top, #05224e 0%, #b63778 100%);
 }
 
 .main__chart__container {
@@ -25,25 +25,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 }
 
 .main__chart__title__wrapper {
+  // border: 1px solid red;
   text-align: center;
   width: 80%;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 }
 
 .main__chart__title {
-  color: blue;
+  color: #05224e;
   margin-bottom: 2rem;
 
   @media screen and (max-width: 1200px) {
     font-size: 1.5rem;
   }
+
+  @media screen and (max-width: 500px) {
+    color: #fff;
+  }
 }
 
 .main__icons__wrapper {
   // border: 1px solid red;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

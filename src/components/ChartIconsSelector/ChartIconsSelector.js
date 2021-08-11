@@ -12,18 +12,18 @@ const ChartIconsSelector = ({ setChartType, chartType }) => {
         <BiBarChart />
       </div>
       <div
-        onClick={() => setChartType('line')}
-        className={`chart__icon ${chartType === 'line' ? 'active' : ''}`}
-      >
-        <BiLineChart />
-      </div>
-      <div
         onClick={() => setChartType('horizontal')}
         className={`chart__icon horizontal ${
           chartType === 'horizontal' ? 'active' : ''
         }`}
       >
         <BiBarChart />
+      </div>
+      <div
+        onClick={() => setChartType('line')}
+        className={`chart__icon ${chartType === 'line' ? 'active' : ''}`}
+      >
+        <BiLineChart />
       </div>
     </div>
   );

@@ -23,7 +23,9 @@ const CitySelector = () => {
             src={city.img}
             alt={city.cityName}
           />
-          <p>{city.cityName}</p>
+          <p className={cityLat === city.location.lat ? 'active' : ''}>
+            {city.cityName}
+          </p>
         </div>
       ))}
     </div>

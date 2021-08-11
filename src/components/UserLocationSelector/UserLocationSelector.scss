@@ -1,10 +1,30 @@
 .map__location__icon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  color: rgb(180, 173, 173);
+  background: #fff;
   font-size: 2rem;
   cursor: pointer;
-  color: grey;
 
   &.active {
-    color: blue;
+    color: #fff;
+    background: #05224e;
+  }
+
+  @media screen and (max-width: 1200px) {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -15,14 +35,14 @@
 
   transition: all 0.15s ease;
   padding: 10px;
-  color: #000;
+  color: #fff;
   border-radius: 10px;
-  box-shadow: 2px 2px 1px silver;
+  box-shadow: 2px 2px 1px #fff;
 }
 
 [data-tooltip]:hover:before {
   opacity: 1;
-  background: lightgrey;
+  background: #05224e;
   margin-top: -50px;
   margin-left: 20px;
 }

@@ -2,9 +2,9 @@ import { Bar, defaults } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
 const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
-  defaults.color = '#000';
+  defaults.color = '#fff';
 
-  const data = {
+  const dataBar = {
     labels: hourlyTimes,
     datasets: [
       {
@@ -65,7 +65,7 @@ const BarChart = ({ hourlyTimes, hourlyTemperatures, chartType }) => {
   return (
     <>
       <Bar
-        data={data}
+        data={dataBar}
         options={chartType === 'vertical' ? optionsVertical : optionsHorizontal}
       />
     </>

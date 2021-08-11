@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,yBAAyB,CAAC;EACxB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,MAAM,CAAC;EACL,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI;CAKhB;;AAHC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAJtC,AAAA,MAAM,CAAC;IAKH,SAAS,EAAE,IAAI;GAElB",
+    "sources": [
+        "TitleBanner.scss"
+    ],
+    "names": [],
+    "file": "TitleBanner.css"
+}

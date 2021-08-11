@@ -3,16 +3,36 @@
 }
 
 .chart__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
   font-size: 2rem;
   margin-left: 1rem;
   cursor: pointer;
   color: rgb(180, 173, 173);
+  background: #fff;
+
+  &.active {
+    color: #fff;
+    background: #05224e;
+  }
+
+  @media screen and (max-width: 1200px) {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 .horizontal {
   transform: rotate(90deg);
-}
-
-.active {
-  color: blue;
 }

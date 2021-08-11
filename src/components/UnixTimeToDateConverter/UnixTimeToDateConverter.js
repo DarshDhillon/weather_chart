@@ -1,3 +1,6 @@
+import { BsCalendar } from 'react-icons/bs';
+import './UnixTimeToDateConverter.scss';
+
 const TwentyFourHoursInSeconds = 90000;
 
 const unixTimeInSeconds = Math.floor(
@@ -11,7 +14,17 @@ const prevTwentyFourHoursUnixToDate = new Date(
 ).toLocaleDateString('en-UK');
 
 const UnixTimeToDateConverter = () => {
-  return <p>{prevTwentyFourHoursUnixToDate}</p>;
+  return (
+    <div className='time__date__wrapper'>
+      <i className='calendar__icon'>
+        <BsCalendar />
+      </i>
+      <p className='time__stamp'>{prevTwentyFourHoursUnixToDate}</p>;
+      <i className='calendar__icon'>
+        <BsCalendar />
+      </i>
+    </div>
+  );
 };
 
 export default UnixTimeToDateConverter;
