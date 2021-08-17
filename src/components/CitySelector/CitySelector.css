@@ -35,6 +35,19 @@
           justify-content: center;
 }
 
+@media screen and (max-width: 500px) {
+  .city__selector__image__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 300px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .city__selector__image__wrapper img {
   width: 150px;
   cursor: pointer;
@@ -78,5 +91,11 @@
 
 .city__selector__image__wrapper p.active {
   color: #05224e;
+}
+
+@media screen and (max-width: 500px) {
+  .city__selector__image__wrapper p {
+    margin-left: 1rem;
+  }
 }
 /*# sourceMappingURL=CitySelector.css.map */

@@ -6,7 +6,6 @@ import {
 } from './actionTypes';
 
 const unixTimeInSeconds = Math.floor(new Date().getTime() / 1000 - 90000);
-// console.log(unixTimeInSeconds);
 const OPEN_WEATHER_API_KEY = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
 
 const GOOGLE_MAPS_GEOCODING_API_KEY =
@@ -25,7 +24,6 @@ export const getWeatherData =
 
     try {
       const { data } = await axios.get(OPEN_WEATHER_ENDPOINT);
-      // console.log(data);
       dispatch({
         type: GET_WEATHER_DATA,
         payload: data,

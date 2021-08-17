@@ -1,5 +1,4 @@
 .city__selector__container {
-  // border: 1px solid red;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -11,7 +10,6 @@
 }
 
 .city__selector__image__wrapper {
-  // border: 1px solid blue;
   min-width: 180px;
   margin: 0rem 1rem;
   padding: 1rem;
@@ -19,6 +17,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+  }
 
   img {
     width: 150px;
@@ -56,6 +60,10 @@
 
     &.active {
       color: #05224e;
+    }
+
+    @media screen and (max-width: 500px) {
+      margin-left: 1rem;
     }
   }
 }

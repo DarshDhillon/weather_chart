@@ -1,5 +1,4 @@
 .container {
-  // border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,17 +8,14 @@
 }
 
 .main__chart__container {
-  // border: 1px solid blue;
   display: flex;
   flex-direction: column;
-  // height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .main__chart__wrapper {
-  // border: 1px solid red;
   padding: 2rem 1rem 2rem 1rem;
   width: 80%;
   display: flex;
@@ -32,7 +28,6 @@
 }
 
 .main__chart__title__wrapper {
-  // border: 1px solid red;
   text-align: center;
   width: 80%;
 
@@ -55,7 +50,6 @@
 }
 
 .main__icons__wrapper {
-  // border: 1px solid red;
   padding: 2rem;
   display: flex;
   justify-content: space-between;

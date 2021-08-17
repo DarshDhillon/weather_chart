@@ -5,12 +5,11 @@
 }
 
 .loading__spinner {
-  // border: 1px solid red;
   position: absolute;
   transform: translate(-50%, -30%);
   left: 50%;
   top: 30%;
-  // width: 500px;
+
   @media screen and (max-width: 550px) {
     width: 250px;
   }
