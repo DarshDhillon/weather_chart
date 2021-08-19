@@ -1,4 +1,4 @@
-![banner](https://ibb.co/PG0zzVW)
+![banner](https://i.ibb.co/pj5rrkK/Temp-Chart-Banner.png)
 
 # Getting Started with Create React App
 
