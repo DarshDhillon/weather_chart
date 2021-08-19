@@ -1,22 +1,20 @@
-![Chat Application](https://i.ibb.co/jgzDFGS/24hr-Weather-Temperature-Chart.png) ![Logo](https://i.ibb.co/mSbnxqD/Charts-logo-transparent.png)
+![Chat App Banner](https://i.ibb.co/PrdGb3h/github-readme-charts-banner.png)
 
 ### [Link to live site](https://24hourchart.darshdhillon.co.uk/)
 
-## Introduction
+## App Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+This app displays the previous 24 hours' temperatures for selected major cities across the globe. There is also an option to get data for the user's current location.
 
-Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. Duis at tellus at urna condimentum mattis pellentesque. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus.
-
-Quam elementum pulvinar etiam non quam lacus suspendisse faucibu. This is a test.
+The data is fetched from the openweathermap API in the form of an app generated Unix timestamp of the current date minus 24 hours. London, UK is the default fetch called, and the data is rendered using the [chartjs](https://www.chartjs.org/) library.
 
 ## Features
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+- Redux asynchorous actions via Thunk middleware
+- Google Maps reverse geocoding to obtain the user's location in combination with the browser navigator API
+- Option to display horizontal and vertical bar charts, or a line graph
+- Custom markup and styling with React and SASS (no UI or styling libraries such as Material UI, Bootstrap etc.)
+- Fully responsive for desktop, tablet or mobile
 
 ## Installation
 
@@ -28,5 +26,9 @@ Install the necessary dependencies, and then start the application:
 npm install
 npm start
 ```
+
+## Notes
+
+Relevant and active keys for both the openweathermap and Google geocoding APIs will be required for the app to function.
 
 ![App snapshot](https://i.ibb.co/kG7MPdw/Readme-upload.png)
