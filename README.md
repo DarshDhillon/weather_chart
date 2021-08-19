@@ -1,10 +1,6 @@
-![Chat Application](https://i.ibb.co/jgzDFGS/24hr-Weather-Temperature-Chart.png)
+![Chat Application](https://i.ibb.co/jgzDFGS/24hr-Weather-Temperature-Chart.png) ![Logo](https://i.ibb.co/mSbnxqD/Charts-logo-transparent.png)
 
-# 24-hour Weather Temperature Charts
-
-![Logo](https://i.ibb.co/Dbp9P7R/charts-logo-transparent.png)
-
-### [Live Site](https://24hourchart.darshdhillon.co.uk/)
+### [Link to live site](https://24hourchart.darshdhillon.co.uk/)
 
 ## Introduction
 
@@ -32,3 +28,5 @@ Install the necessary dependencies, and then start the application:
 npm install
 npm start
 ```
+
+![App snapshot](https://i.ibb.co/kG7MPdw/Readme-upload.png)
