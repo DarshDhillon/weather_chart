@@ -12,7 +12,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. Duis at tellus at urna condimentum mattis pellentesque. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus.
 
-Quam elementum pulvinar etiam non quam lacus suspendisse faucibu
+Quam elementum pulvinar etiam non quam lacus suspendisse faucibu. This is a test.
 
 ## Features
 
