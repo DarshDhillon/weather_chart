@@ -1,19 +1,20 @@
-![Chat App Banner](https://i.ibb.co/PrdGb3h/github-readme-charts-banner.png)
+![24hr temp chart app banner](https://i.ibb.co/PrdGb3h/github-readme-charts-banner.png)
 
 ### [Link to live site](https://24hourchart.darshdhillon.co.uk/)
 
-## App Overview
+## App overview
 
-This app displays the previous 24 hours' temperatures for selected major cities across the globe. There is also an option to get data for the user's current location.
+24-hr Charts displays the previous 24 hours' temperatures for selected major cities across the globe. There is also an option to get data for the user's current location.
 
 The data is fetched from the openweathermap API in the form of an app generated Unix timestamp of the current date minus 24 hours. London, UK is the default fetch called, and the data is rendered using the [chartjs](https://www.chartjs.org/) library.
 
 ## Features
 
-- Redux asynchorous actions via Thunk middleware
+- Redux asynchronous actions via Thunk middleware
 - Google Maps reverse geocoding to obtain the user's location in combination with the browser navigator API
 - Option to display horizontal and vertical bar charts, or a line graph
 - Custom markup and styling with React and SASS (no UI or styling libraries such as Material UI, Bootstrap etc.)
+- PropTypes addition for all relevant components
 - Fully responsive for desktop, tablet or mobile
 
 ## Installation
