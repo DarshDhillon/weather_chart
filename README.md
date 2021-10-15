@@ -1,6 +1,6 @@
 ![24hr temp chart app banner](https://i.ibb.co/PrdGb3h/github-readme-charts-banner.png)
 
-### [Link to live site](https://24hourchart.darshdhillon.co.uk/)
+### [Link to live site](https://24hourcharts.darshdhillon.co.uk/)
 
 ## App overview
 
